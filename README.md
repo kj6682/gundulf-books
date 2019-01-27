@@ -1,2 +1,2 @@
 # gundulf-books
-reactive mongo library
+yet another boring exercise
