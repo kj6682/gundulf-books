@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 @Qualifier("MovieRepository")
-public interface Repository extends CrudRepository<Movie, Long> {
+public interface MovieRepository extends CrudRepository<Movie, Long> {
 
     List<Movie> findAll();
 

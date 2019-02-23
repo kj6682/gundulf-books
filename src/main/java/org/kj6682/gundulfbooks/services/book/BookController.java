@@ -17,7 +17,7 @@ import java.util.List;
 @Api(value = "books", description = "Books API")
 @RestController("BookController")
 @RequestMapping("/api/books/v1.0")
-public class Controller {
+public class BookController {
 
     @Autowired
     private BookRepository bookRepository;

@@ -8,11 +8,11 @@ import org.springframework.context.annotation.Profile;
 import java.io.IOException;
 
 @Configuration
-public class Config {
+public class BookConfig {
 
     @Profile({"h2"})
     @Bean
-    CommandLineRunner initDatabase(Repository repository) {
+    CommandLineRunner initDatabase(BookRepository repository) {
         return args -> {
             repository.save(new Book("the Hobbit", "J.R.Tolkien", "fantasy"));
             repository.save(new Book("1984", "George Orwell", "science fiction"));

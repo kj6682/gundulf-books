@@ -1,11 +1,13 @@
 import React from 'react';
+import { Card } from 'semantic-ui-react';
+import BookCard from './book-card';
 
 export default function BookList({books}){
 
   const list = () => {
     return books.map(book => {
       return (
-        <li key={book._id}>{book.title} {book.author}</li>
+        <BookCard key={book.id} book={book}/>
       )
     })
   }
