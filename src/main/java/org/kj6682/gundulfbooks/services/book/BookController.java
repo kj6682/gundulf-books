@@ -14,6 +14,7 @@ import static org.springframework.util.Assert.isTrue;
 import java.util.LinkedList;
 import java.util.List;
 
+@CrossOrigin(origins = {"http://localhost:3000"})
 @Api(value = "books", description = "Books API")
 @RestController("BookController")
 @RequestMapping("/api/books/v1.0")

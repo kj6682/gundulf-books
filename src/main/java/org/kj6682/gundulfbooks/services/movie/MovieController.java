@@ -13,6 +13,7 @@ import static org.springframework.util.Assert.isTrue;
 import static org.springframework.util.Assert.notNull;
 import static org.springframework.util.StringUtils.isEmpty;
 
+@CrossOrigin(origins = {"http://localhost:3000"})
 @Api(value = "movies", description = "Movies API")
 @RestController("MovieController")
 @RequestMapping("/api/movies/v1.0")
