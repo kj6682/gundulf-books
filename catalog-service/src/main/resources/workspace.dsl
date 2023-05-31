@@ -5,7 +5,7 @@ workspace {
         gundulfSystem = softwareSystem "Gundulf Books" "My magical library"{
             catalog_service = container "Catalog Service" {
                 technology "spring boot"
-                description  "It will be responsible for managing the catalog of books in the Polar Bookshop system."
+                description  "It will be responsible for managing the catalog of books in the Gundulf Library system."
             }
         }
 
