@@ -6,7 +6,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.kj6682.catalogservice.domain.Book;
 import org.kj6682.catalogservice.domain.BookRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class InMemoryRepository implements BookRepository{
     
     private final static Map<String, Book> books = new ConcurrentHashMap<>();

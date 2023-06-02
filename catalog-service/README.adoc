@@ -25,3 +25,11 @@ Catalog Service will be responsible for supporting the following use cases:
 | | | |201 | |Insert the new book
 |/book/{isbn} |DELETE | |204 ||Deletes the book given its ISBN 
 |===
+
+## Constraints
+For the Book class, we might think of using these validation constraints:
+
+- The ISBN must be defined and in the correct format (ISBN-10 or ISBN-13).
+- The title must be defined.
+- The author must be defined.
+- The price must be defined and be greater than zero.
