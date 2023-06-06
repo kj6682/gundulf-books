@@ -13,7 +13,7 @@ import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.fail;
+
 
 public class BookValidationTest {
     private static Validator validator;

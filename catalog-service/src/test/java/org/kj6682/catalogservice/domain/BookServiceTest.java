@@ -11,7 +11,6 @@ import static org.mockito.Mockito.when;
 
 import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.fail;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @ExtendWith(MockitoExtension.class)
@@ -37,7 +36,6 @@ public class BookServiceTest {
     @Test
     void when_book_to_be_read_does_not_exist__then_throws(){
         var isbn = "1234567890";
-        var book = new Book(isbn, "title", "author", 10.00);
         when(repository.findByIsbn(isbn)).thenReturn(Optional.empty());
 
         assertThatThrownBy(()-> service.viewBookDetails(isbn))

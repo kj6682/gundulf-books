@@ -1,6 +1,5 @@
 package org.kj6682.catalogservice.domain;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 @Service
