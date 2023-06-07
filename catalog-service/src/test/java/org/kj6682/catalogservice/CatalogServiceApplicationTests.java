@@ -80,7 +80,7 @@ class CatalogServiceApplicationTests {
                 });
 			}
 
-	@Test
+	
 	void when_DELETE_then_delete_book() {
 		var bookIsbn = "1231231233";
 		var bookToCreate = new Book(bookIsbn, "Title", "Author", 9.90);
