@@ -35,7 +35,19 @@ jobs:
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
     #  uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
-    - name: Submit Dependency Snapshot
-      uses: advanced-security/maven-dependency-submission-action@v3 
+    #- name: Submit Dependency Snapshot
+    #  uses: advanced-security/maven-dependency-submission-action@v3 
+    #  with:
+    #    directory: "${{ github.workspace }}/catalog-service"
+    - name: Code vulnerability scanning
+      uses: anchore/scan-action@v3
+      id: scan
       with:
-        directory: "${{ github.workspace }}/catalog-service"
+          path: "${{ github.workspace }}"
+          fail-build: false
+          severity-cutoff: high
+    - name: Upload vulnerability report
+      uses: github/codeql-action/upload-sarif@v2
+      if: success() || failure()
+      with:
+          sarif_file: ${{ steps.scan.outputs.sarif }}    
