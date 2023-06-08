@@ -1,5 +1,7 @@
 # Gundulf books 
 
+Here goes the description of the microservices architecture.
+
 ## Catalog service
 The Catalog Service is responsible for managing the catalog of books in the Gundulf Library system.
 
