@@ -14,7 +14,7 @@ class CatalogServiceApplicationTests {
 	@Autowired
 	private WebTestClient webTestClient;
 
-	//@Test
+	@Test
 	void when_POST__Then_return_created_book() {
 		var expectedBook = new Book("1231231231", "Title", "Author", 9.90);
 
@@ -30,7 +30,7 @@ class CatalogServiceApplicationTests {
 				});
 	}
 
-	//@Test
+	@Test
 	void when_GET_with_id__then_return_book() {
 		var bookIsbn = "1231231230";
 		var bookToCreate = new Book(bookIsbn, "Title", "Author", 9.90);
@@ -54,7 +54,7 @@ class CatalogServiceApplicationTests {
 				});
 	}
 
-	//@Test
+	@Test
     void when_PUT__then_update_book() {
         var bookIsbn = "1231231232";
         var bookToCreate = new Book(bookIsbn, "Title", "Author", 9.90);
@@ -80,7 +80,7 @@ class CatalogServiceApplicationTests {
                 });
 			}
 
-	//@Test
+	@Test
 	void when_DELETE_then_delete_book() {
 		var bookIsbn = "1231231233";
 		var bookToCreate = new Book(bookIsbn, "Title", "Author", 9.90);
