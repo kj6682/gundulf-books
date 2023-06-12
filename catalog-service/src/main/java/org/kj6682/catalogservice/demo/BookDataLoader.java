@@ -7,6 +7,11 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
+import java.util.*;
+import java.util.stream.IntStream;
+
+import static java.util.stream.Collectors.toSet;
+
 @Component
 @Profile("testdata")
 public class BookDataLoader {
@@ -18,10 +23,11 @@ public class BookDataLoader {
 
     @EventListener(ApplicationReadyEvent.class)
     public void loadBooks(){
-        var book1 = new Book("1234567890", "1984", "George Orwell", 1.0);
-        var book2 = new Book("1234567891", "Atado y bien atado", "Rubén Uceda", 15.0);
 
-        repository.save(book1);
-        repository.save(book2);
+        IntStream.range(0, 100).boxed().forEach(i -> {
+            var book = new Book("123456789"+i, "title"+i, "author"+i, i.doubleValue());
+            repository.save(book);
+        });
+
     }
 }
